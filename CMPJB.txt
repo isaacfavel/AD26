@@ -1,0 +1,21 @@
+JBE	JB	Before
+JAE	JA	After
+
+
+
+		JMP-----JE
+			JNE
+
+		COMPARAR AL,30h                                   30h-------0
+		JB eNoesNum					            1
+CMP aL,40h<--	CMP AL,39h					            2
+JB eSiEsNum<---	JBE eSiEsNum						    3
+
+
+
+
+								  39h-------9
+
+
+
+

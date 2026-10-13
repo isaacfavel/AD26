@@ -1,0 +1,16 @@
+CMP AL,34h
+
+JE  eSies4
+
+Jump Equal   JMP  CONDICIONADOS
+
+
+JMP
+
+CMP AL,54h
+JMP  eSalto1
+
+
+CMP AL,54h
+JE eES4
+Jump Equal
