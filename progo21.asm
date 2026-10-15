@@ -40,7 +40,8 @@ eInicio:
     int 21h
     mov ah,01h
     int 21h
-;bl,cl,al
+    mov ch,al
+;bl,cl,ch
 ;9, 5, 2
 ;2, 5, 9
     
@@ -54,7 +55,7 @@ eInicio:
         mov bl,cl
         mov cl,bh
 
-        cmp cl,al
+        cmp cl,ch
         ja esMayor1
         
         jmp imprimir
@@ -62,17 +63,27 @@ eInicio:
 
     esMayor1:
         mov bh,cl
-        mov cl,al
-        mov al,bh
+        mov cl,ch
+        mov ch,bh
+
+        cmp bl,cl
+        ja esMayor3
+
+        jmp imprimir
+
+    esMayor3:
+        mov bh,cl
+        mov cl,bl
+        mov bl,bh
         jmp imprimir
 
     esMenor:
-        cmp cl,al
+        cmp cl,ch
         ja esMayor2
 
     esMayor2:
         mov bh,cl
-        mov cl,al
+        mov cl,ch
         mov cl,bh
         jmp imprimir
 
@@ -86,7 +97,7 @@ eInicio:
         int 21h
 
         mov ah,02h
-        mov dl,al
+        mov dl,ch
         int 21h
 
 eFinProg:
