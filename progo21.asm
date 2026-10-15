@@ -41,7 +41,7 @@ eInicio:
     mov ah,01h
     int 21h
 ;bl,cl,al
-;5, 9, 2
+;9, 5, 2
 ;2, 5, 9
     
     cmp bl,cl
@@ -57,11 +57,13 @@ eInicio:
         cmp cl,al
         ja esMayor1
         
+        jmp imprimir
+        
 
     esMayor1:
         mov bh,cl
         mov cl,al
-        mov cl,bh
+        mov al,bh
         jmp imprimir
 
     esMenor:
