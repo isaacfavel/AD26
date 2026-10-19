@@ -1,0 +1,2 @@
+ISAAC ROMERO FAVELA
+Mi programa pide un numero de una cifra e indentifica si es par o es impar, la lógica que tenemos es que ala cifra le vamos restando 2 en un bucle hasta que nos quede (0) o (1) para identificar si es par o impar, en este caso si bl=0 es par o si bl=1 es impar
