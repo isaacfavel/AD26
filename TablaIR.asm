@@ -2,10 +2,10 @@
 .STACK 20h
 .DATA
     cDescrip DB 'Programa que imprime la tabla del 2$'
-    cPor    DB 'X$'
-    cIgual    DB '=$'
-    cSalto DB 10,13,'$'
-    cFinProg    DB 10,10,13,'El programa ah finalizado, presiona enter para terminar$'
+    cPor     DB 'X$'
+    cIgual   DB '=$'
+    cSalto   DB 10,13,'$'
+    cFinProg DB 10,10,13,'El programa ah finalizado, presiona enter para terminar$'
 .CODE
     eInicio:
        mov ax,@Data
