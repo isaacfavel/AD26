@@ -2,9 +2,9 @@
 .STACK 20h
 .DATA
 
-        cDescrip DB 'El programa muestra los numeros pares del 1-20',10,10,13,'$'
+        cDescrip DB 'El programa muestra la secuencia de 2',10,10,13,'$'
         cFinProg DB '***El programa ah finalizado***$'
-        cSalto   DB 10,13,'$'
+        cComa   DB ',$'
 
 .CODE
     eInicio:
@@ -37,8 +37,9 @@
         int 21h
 
         mov ah,09h
-        mov dx,offset cSalto
+        mov dx,offset cComa
         int 21h
+
 
         mov ah,ch
         mov al,cl
@@ -51,7 +52,9 @@
 
         inc bh
 
-    cmp bh,10
+
+
+    cmp bh,49
     jbe eCiclo
 
 
