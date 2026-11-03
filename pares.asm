@@ -2,9 +2,12 @@
 .STACK 20h
 .DATA
 
-        cDescrip DB 'El programa muestra la secuencia de 2',10,10,13,'$'
+        cDescrip DB 'El programa muestra la secuencia de una cifra ingresada',10,10,13,'$'
         cFinProg DB '***El programa ah finalizado***$'
+        cPregunta DB 10,13,'De cuanto quieres el incremento: $'
+        cSalto DB 10,13,'$'
         cComa   DB ',$'
+        cVar DB 00
 
 .CODE
     eInicio:
@@ -16,9 +19,26 @@
     mov dx,offset cDescrip
     int 21h
 
+    
+
     mov ch,00
-    mov cl,02
-    mov bh,01
+    mov cl,00
+
+    mov ah,09h
+    mov dx,offset cPregunta
+    int 21h
+
+    mov ah,01h
+    int 21h
+
+    mov ah,09h
+    mov dx,offset cSalto
+    int 21h
+
+    sub al,30h
+
+    mov cl,al
+    mov cVar,al
 
     eCiclo:
 
@@ -44,18 +64,20 @@
         mov ah,ch
         mov al,cl
 
-        add al,02
+        add al,cVar
         aaa
 
         mov ch,ah
         mov cl,al
 
-        inc bh
 
+    cmp ch,09
+    ja eFinProg
 
+    jmp eCiclo
 
-    cmp bh,49
-    jbe eCiclo
+    
+
 
 
 
