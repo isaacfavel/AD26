@@ -18,6 +18,10 @@
         mov ds,ax
 
         mov ah,09h
+        mov dx,offset cDescrip
+        int 21h
+
+        mov ah,09h
         mov dx,offset cPregunta
         int 21h
 
