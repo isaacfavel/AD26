@@ -2,19 +2,24 @@
 .STACK 20h
 .DATA
 
-        cDescrip DB 'Isaac Romero Favela Categoria de productos',10,10,13,'$'
+        cDescrip DB 'Categoria de productos',10,10,13,'$'
+        cNombre DB 'Isaac Romero Favela',10,13,'$'
         cIngresa DB 10,13,'Ingresa el numero de productos: $'
         cSin DB 10,13,'Sin reconocimiento$'
         cJunior DB 10,13,'Investigador Junior$'
         cSenior DB 10,13,'Investigador Senior$'
         cHonorifico DB 10,13,'Investigador Honorifico$'
-        cFinProg DB '***El programa ah finalizado***$'
+        cFinProg DB 10,13,'***El programa ah finalizado***$'
         
 
 .CODE
         eInicio:
                 mov ax,@Data
                 mov ds,ax
+
+                mov ah,09h
+                mov dx,offset cNombre
+                int 21h
 
                 mov ah,09h
                 mov dx,offset cDescrip

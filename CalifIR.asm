@@ -2,8 +2,9 @@
 .STACK 20h
 .DATA
 
-        cDescrip DB 'El programa pide (n) calificaciones y regresa cuantas son aprobatorias y cuales no',10,10,13,'$'
-        cFinProg DB '***El programa ah finalizado***$'
+        cNombre DB 'Isaac Romero Favela$'
+        cDescrip DB 10,13,'El programa pide (n) calificaciones y regresa cuantas son aprobatorias y cuales no',10,13,'$'
+        cFinProg DB 10,13,'***El programa ah finalizado***$'
         cPregunta DB 10,13,'Ingresa el numero de calificaciones: $'
         cIngresa DB 10,13,'Ingresa calificacion: $'
         cAprobatoria DB 10,13,'Las calificaciones aprobatorias son: $'
@@ -16,6 +17,10 @@
         eInicio:
         mov ax,@Data
         mov ds,ax
+
+        mov ah,09h
+        mov dx,offset cNombre
+        int 21h
 
         mov ah,09h
         mov dx,offset cDescrip
