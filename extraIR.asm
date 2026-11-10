@@ -89,7 +89,6 @@
         cmp bl,03
         je esTres
 
-
         esUno:
             mov ah,09h
             mov dx,offset cCanSurtir
@@ -155,23 +154,10 @@
                 mov ah,09h
                 mov dx,offset cNoDispone
                 int 21h
-                jmp eCiclo
-
-
-            
+                jmp eCiclo 
 
         esTres:
             jmp eFinProg
-
-
-
-
-
-
-
-
-
-
         eFinProg:
 
             mov ah,09h
