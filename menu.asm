@@ -81,7 +81,7 @@ eInicio:
         int 21h
         sub al,30h
         
-
+        mov ah,00
         add al,bh
         aaa
         mov bx,ax
