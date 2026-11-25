@@ -12,19 +12,19 @@ eInicio:
     mov dx,offset cFinProg
     call Mensaje
     call Readkey
-    call ControlDos
 
-    Datos PROC Near
-        mov ax,@DATA
-        mov ds,ax
-        ret
-    Datos ENDP
+    
 
     Mensaje PROC Near
         mov ah,09h
         int 21h
         ret
     Mensaje ENDP
+    Datos PROC Near
+        mov ax,@DATA
+        mov ds,ax
+        ret
+    Datos ENDP
 
     Readkey PROC Near
         mov ah,08h
