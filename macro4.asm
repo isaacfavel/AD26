@@ -10,6 +10,12 @@ Guardar MACRO var
     mov var,al
 ENDM
 
+Imprimir MACRO numero
+    mov ah,02h
+    mov dl,numero
+    int 21h
+ENDM
+
 .MODEL SMALL
 .STACK 20h
 .DATA
@@ -48,16 +54,11 @@ eInicio:
 
     eMayor1:
         Mensaje cMayor1
-        mov ah,02h
-        mov dl,vNum1
-        int 21h
-        jmp eFinProg
+        Imprimir vNum1
 
     eMayor2:
         Mensaje cMayor2
-        mov ah,02h
-        mov dl,vNum2
-        int 21h
+        Imprimir vNum2
 
     eFinProg:
         Mensaje cFinProg
